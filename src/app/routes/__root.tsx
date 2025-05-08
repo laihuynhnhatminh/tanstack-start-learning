@@ -8,6 +8,8 @@ import {
 import { APP_DESCRIPTION, APP_NAME } from "@/constants/app.constant";
 
 import appCss from "@/styles/App.css?url";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -29,10 +31,10 @@ export const Route = createRootRoute({
     ],
     links: [
       {
-        rel: 'stylesheet',
+        rel: "stylesheet",
         href: appCss,
-      }
-    ]
+      },
+    ],
   }),
   component: RootComponent,
 });
@@ -40,7 +42,11 @@ export const Route = createRootRoute({
 function RootComponent() {
   return (
     <RootDocument>
-      <Outlet />
+      <main className="grid grid-rows-[auto_1fr_auto] min-h-svh w-svw">
+        <Header />
+        <Outlet />
+        <Footer />
+      </main>
     </RootDocument>
   );
 }

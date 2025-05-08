@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { createFileRoute, useRouter } from "@tanstack/react-router";
 import { createServerFn } from "@tanstack/react-start";
+import { z } from "zod";
 import fs from "fs";
 
 const filePath = "count.txt";
@@ -20,7 +21,7 @@ const getCount = createServerFn({
 const addCount = createServerFn({
   method: "POST",
 })
-  .validator((d: number) => d)
+  .validator(z.number())
   .handler(async ({ data }) => {
     const count = await readCount();
     return fs.promises.writeFile(filePath, (count + data).toString());
@@ -29,7 +30,7 @@ const addCount = createServerFn({
 const subCount = createServerFn({
   method: "POST",
 })
-  .validator((d: number) => d)
+  .validator(z.number())
   .handler(async ({ data }) => {
     const count = await readCount();
     return fs.promises.writeFile(filePath, (count - data).toString());
@@ -52,7 +53,7 @@ function Home() {
         <Button
           type="button"
           onClick={() => {
-            addCount({ data: 1 }).then(() => {
+            addCount({ data: 1}).then(() => {
               router.invalidate();
             });
           }}
