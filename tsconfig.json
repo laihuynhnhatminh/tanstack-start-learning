@@ -39,7 +39,8 @@
     "noUncheckedSideEffectImports": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@public/*": ["./public/*"]
     }
   }
 }
