@@ -3,6 +3,7 @@ import {
   type AnyRouter,
 } from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen";
+import * as TanStackQuery from "@/integrations/tanstack-query/layout";
 
 /**
  * @description Create a router instance for the application.
@@ -22,7 +23,14 @@ export function createRouter(): AnyRouter {
   const router = createTanstackRouter({
     routeTree,
     scrollRestoration: true,
+    defaultPreloadStaleTime: 0,
     defaultPreload: "intent",
+    context: {
+      ...TanStackQuery.getContext(),
+    },
+    Wrap: ({ children }) => (
+      <TanStackQuery.Provider>{children}</TanStackQuery.Provider>
+    ),
   });
 
   return router;

@@ -10,6 +10,7 @@ import { APP_DESCRIPTION, APP_NAME } from "@/constants/app.constant";
 import appCss from "@/styles/App.css?url";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import TanStackDevtools from "@/integrations/tanstack-devtools/provider";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -47,6 +48,7 @@ function RootComponent() {
         <Outlet />
         <Footer />
       </main>
+      <TanStackDevtools />
     </RootDocument>
   );
 }
