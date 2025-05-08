@@ -2,9 +2,19 @@
   "include": [
     "**/*.ts",
     "**/*.tsx",
+    "postcss.config.mjs",
     "eslint.config.js",
     "prettier.config.js",
     "vite.config.js"
+  ],
+
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build",
+    "coverage",
+    "public",
+    "**/routeTree.gen.ts",
   ],
 
   "compilerOptions": {

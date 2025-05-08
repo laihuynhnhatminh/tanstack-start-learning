@@ -7,6 +7,8 @@ import {
 } from "@tanstack/react-router";
 import { APP_DESCRIPTION, APP_NAME } from "@/constants/app.constant";
 
+import appCss from "@/styles/App.css?url";
+
 export const Route = createRootRoute({
   head: () => ({
     meta: [
@@ -25,6 +27,12 @@ export const Route = createRootRoute({
         content: APP_DESCRIPTION,
       },
     ],
+    links: [
+      {
+        rel: 'stylesheet',
+        href: appCss,
+      }
+    ]
   }),
   component: RootComponent,
 });
