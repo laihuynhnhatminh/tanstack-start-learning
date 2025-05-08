@@ -5,6 +5,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
+import { APP_DESCRIPTION, APP_NAME } from "@/constants/app.constant";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -17,11 +18,11 @@ export const Route = createRootRoute({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "Tanstack React Simple",
+        title: APP_NAME,
       },
       {
         name: "description",
-        content: "A simple app using React Start",
+        content: APP_DESCRIPTION,
       },
     ],
   }),
