@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <div className="p-4 border-t border-primary">
+    <div className="border-primary border-t p-4">
       <h1>Footer</h1>
     </div>
   );

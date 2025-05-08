@@ -1,38 +1,38 @@
-import type { ReactNode } from "react";
 import {
-  Outlet,
-  createRootRoute,
   HeadContent,
+  Outlet,
   Scripts,
-} from "@tanstack/react-router";
-import { APP_DESCRIPTION, APP_NAME } from "@/constants/app.constant";
+  createRootRoute,
+} from '@tanstack/react-router';
+import type { ReactNode } from 'react';
+import { APP_DESCRIPTION, APP_NAME } from '@/constants/app.constant';
 
-import appCss from "@/styles/App.css?url";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import TanStackDevtools from "@/integrations/tanstack-devtools/provider";
+import appCss from '@/styles/App.css?url';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import TanStackDevtools from '@/integrations/tanstack-devtools/provider';
 
 export const Route = createRootRoute({
   head: () => ({
     meta: [
       {
-        charSet: "utf-8",
+        charSet: 'utf-8',
       },
       {
-        name: "viewport",
-        content: "width=device-width, initial-scale=1",
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1',
       },
       {
         title: APP_NAME,
       },
       {
-        name: "description",
+        name: 'description',
         content: APP_DESCRIPTION,
       },
     ],
     links: [
       {
-        rel: "stylesheet",
+        rel: 'stylesheet',
         href: appCss,
       },
     ],
@@ -43,7 +43,7 @@ export const Route = createRootRoute({
 function RootComponent() {
   return (
     <RootDocument>
-      <main className="grid grid-rows-[auto_1fr_auto] min-h-svh w-svw">
+      <main className="grid min-h-svh w-svw grid-rows-[auto_1fr_auto]">
         <Header />
         <Outlet />
         <Footer />

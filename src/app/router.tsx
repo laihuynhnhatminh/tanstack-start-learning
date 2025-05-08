@@ -1,9 +1,10 @@
 import {
-  createRouter as createTanstackRouter,
-  type AnyRouter,
-} from "@tanstack/react-router";
-import { routeTree } from "./routeTree.gen";
-import * as TanStackQuery from "@/integrations/tanstack-query/layout";
+  
+  createRouter as createTanstackRouter
+} from '@tanstack/react-router';
+import { routeTree } from './routeTree.gen';
+import type {AnyRouter} from '@tanstack/react-router';
+import * as TanStackQuery from '@/integrations/tanstack-query/layout';
 
 /**
  * @description Create a router instance for the application.
@@ -24,7 +25,7 @@ export function createRouter(): AnyRouter {
     routeTree,
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
-    defaultPreload: "intent",
+    defaultPreload: 'intent',
     context: {
       ...TanStackQuery.getContext(),
     },
@@ -36,7 +37,7 @@ export function createRouter(): AnyRouter {
   return router;
 }
 
-declare module "@tanstack/react-router" {
+declare module '@tanstack/react-router' {
   interface Register {
     router: ReturnType<typeof createRouter>;
   }
