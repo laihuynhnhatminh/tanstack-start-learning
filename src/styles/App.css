@@ -1,6 +1,6 @@
-@import "tailwindcss";
-@import "tw-animate-css";
-@import "./customize/index.css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import './customize/index.css';
 
 * {
   text-rendering: optimizeLegibility;
